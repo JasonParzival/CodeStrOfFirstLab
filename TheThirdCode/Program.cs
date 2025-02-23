@@ -1,12 +1,17 @@
-﻿namespace TheThirdCode
+﻿
+//В тексте удалить каждое слово с четным числом символов, продублировать каждое слово с нечетным числом символов, заменив все вхождения букв ‘d’ на букву ‘t’ 
+
+namespace TheThirdCode
 {
     public class Logic
     {
         public static string Message(string str)
         {
-            string[] words = str.Split();
+            char[] chars = {' ', ',', '.', '!', '?', ';', ':'};
+            string[] words = str.Split(chars, StringSplitOptions.RemoveEmptyEntries);
             string needword = "";
             string message = "";
+            
 
             foreach (string word in words)
             {
@@ -35,8 +40,9 @@
     {
         static void Main(string[] args)
         {
-            string str = "I wanna eat guobaorou with rice and di san xian dad";
-            
+            //string str = "I wanna eat guobaorou with rice and di san xian dad";
+            string str = Console.ReadLine();
+
             string message = Logic.Message(str);
 
             Console.WriteLine(message);

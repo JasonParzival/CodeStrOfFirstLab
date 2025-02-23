@@ -40,5 +40,15 @@ namespace TheThirdCode.Tests
 
             Assert.AreEqual("tough tough towne towne Irkutsk Irkutsk ", message);
         }
+
+        [TestMethod()]
+        public void PunctuationLettersTest()
+        {
+            string str = "you ate my donut, I disrespect you! Cool";
+
+            string message = Logic.Message(str);
+
+            Assert.AreEqual("you you ate ate tonut tonut I I you you ", message);
+        }
     }
 }
